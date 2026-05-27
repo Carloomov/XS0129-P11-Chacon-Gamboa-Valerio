@@ -347,6 +347,15 @@ ggplot(data = airquality, aes(x = Temp, y = Ozone, color = factor(Month))) +
 # de Sepal.Length por especie (Species). Use stat = "summary", fun = "mean".
 
 # >>> ESCRIBA SU CODIGO AQUI:
+ggplot(data = iris, aes(x = Species, y = Sepal.Length, fill = Species)) +
+  geom_bar(stat = "summary", fun = "mean") +
+  labs(
+    title = "Promedio de Sepal.Length por Especie",
+    x     = "Especie",
+    y     = "Promedio de Sepal.Length (cm)"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "none")
 
 
 
