@@ -150,14 +150,14 @@ hist(airquality$Ozone, main = "Ozone",
      col = "yellow",
      freq = TRUE)
 
-Al usar breaks = 5, el histograma agrupa los datos en pocas clases,
-lo que permite ver una visión general de la distribución del ozono,
-pero se pierden detalles finos de la variación de los datos.
-Al aumentar a breaks = 15, el histograma tiene más clases,
-lo que permite observar con mayor detalle la forma de la distribución,
-posibles concentraciones, asimetrías o valores atípicos.
-Sin embargo, demasiadas clases pueden hacer el gráfico más ruidoso
-y dificultar la interpretación global.
+# Al usar breaks = 5, el histograma agrupa los datos en pocas clases,
+# lo que permite ver una visión general de la distribución del ozono,
+# pero se pierden detalles finos de la variación de los datos.
+# Al aumentar a breaks = 15, el histograma tiene más clases,
+# lo que permite observar con mayor detalle la forma de la distribución,
+# posibles concentraciones, asimetrías o valores atípicos.
+# Sin embargo, demasiadas clases pueden hacer el gráfico más ruidoso
+# y dificultar la interpretación global.
 
 
 # ------------------------------------------------------------------------------
@@ -328,6 +328,16 @@ ggplot(data = airquality, aes(x = Temp, y = Ozone, color = factor(Month))) +
 
 # >>> ESCRIBA SU CODIGO AQUI:
 
+ggplot(data = airquality, aes(x = Temp, y = Ozone, color = factor(Month))) +
+  geom_point(shape = 19) +
+  geom_smooth(method = "lm", se = TRUE) +   # Tendencia lineal por mes
+  facet_wrap(~ Month) +                      # Un panel por mes
+  labs(
+    title = "Relación entre Temperatura y Ozono",
+    x     = "Temperatura (Temp)",
+    y     = "Ozono (Ozone)",
+    color = "Mes"
+  )
 
 
 # ------------------------------------------------------------------------------
