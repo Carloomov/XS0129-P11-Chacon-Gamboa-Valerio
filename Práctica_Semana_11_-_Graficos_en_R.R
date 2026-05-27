@@ -184,13 +184,19 @@ boxplot(Temp ~ Month, # el simbolo ~ sirve para decir "en funcion de", en este c
 # airquality$Ozone (eje Y). Use pch = 19 y describa la relacion observada.
 
 # >>> ESCRIBA SU CODIGO AQUI:
+plot(airquality$Temp, airquality$Ozone,
+     main = "Relación entre Temperatura y Ozono",
+     xlab = "Temperatura (Temp)",
+     ylab = "Ozono (Ozone)",
+     pch = 19,                   #los puntos sean circulos rellenos
+     col = "red")
 
 
 
-# Comentario 1.4: ______________________________________________________________
-
-
-
+# Comentario 1.4: Existe una relación positiva entre la temperatura y el ozono, 
+# ya que a medida que la temperatura aumenta, los niveles de ozono tienden a 
+#aumentar. Sin embargo, la relación no es perfectamente lineal, ya que si  
+#existe cierta dispersión en los datos.
 # ------------------------------------------------------------------------------
 # Ejercicio 1.5  GRAFICO DE PIE  (4 pts)           [Responsable: Integrante B]
 # ------------------------------------------------------------------------------
