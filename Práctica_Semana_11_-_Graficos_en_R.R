@@ -206,7 +206,13 @@ plot(airquality$Temp, airquality$Ozone,
 # Pista: table(mtcars$cyl) y construya las etiquetas con paste0() y round().
 
 # >>> ESCRIBA SU CODIGO AQUI:
-
+slices  <- table(mtcars$cyl)
+lbls <- names(slices)
+pct <- round(slices/sum(slices)*100)
+lbls <- paste(lbls, pct)
+lbls <- paste(lbls, "%", sep = "")
+pie(slices, labels = lbls, col = rainbow(length(lbls)),
+    main = "Pie Chart of Engine Cylinders")
 
 
 # ------------------------------------------------------------------------------
