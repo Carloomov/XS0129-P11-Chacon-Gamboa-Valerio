@@ -20,9 +20,8 @@
 # ------------------------------------------------------------------------------
 # Integrante A: Aaron Chacon Gamboa  Carne: C4E125  GitHub: aaron2410
 # Integrante B: Faustino Gamboa Araya  Carne: C4F274  GitHub: faustinogamboa40-cmyk
-# Integrante C: ______________________  Carne: __________  GitHub: ____________
-#               (deje en blanco si el grupo es de dos personas)
-#
+# Integrante C: Carlos Felipe Monge Valerio  Carne: C5H278  GitHub: Carloomov
+#             
 # ------------------------------------------------------------------------------
 # OBJETIVOS DE APRENDIZAJE
 # ------------------------------------------------------------------------------
@@ -165,10 +164,18 @@ hist(airquality$Ozone, main = "Ozone",
 # >>> ESCRIBA SU CODIGO AQUI:
 
 
+boxplot(Temp ~ Month, # el simbolo ~ sirve para decir "en funcion de", en este caso, que grafique la temperatura segun el mes
+        data = airquality, # el conjunto de datos,
+        main = "Temperatura según el mes", # titulo del gráfico
+        xlab = "Mes", # Sanemos el mes esta en el eje X por como definimos las variables antes (Temp ~ Month), temperatura es una variable dependiente
+        ylab = "Temperatura (Fahrenheit)",
+        col = "yellow", # color que definimos para el interior de la caja
+        border = "darkblue" # color para los bordes
+)
 
-# Comentario 1.3: ______________________________________________________________
-
-
+# Comentario 1.3: al observar el gráfico, note como el mes 7 presenta la temperatura más alta según su mediana
+# además de que este mes presenta una caja más pequeña que las demás (lo que indica que indica hubo menos variabilidad) por 
+# lo que sugiere hubo una estabilidad de temperatura ese mes 
 
 # ------------------------------------------------------------------------------
 # Ejercicio 1.4  DIAGRAMA DE DISPERSION  (4 pts)   [Responsable: Integrante A]
