@@ -18,7 +18,7 @@
 # ------------------------------------------------------------------------------
 # DATOS DEL GRUPO
 # ------------------------------------------------------------------------------
-# Integrante A: ______________________  Carne: __________  GitHub: ____________
+# Integrante A: Aaron Chacon Gamboa  Carne: C4E125  GitHub: aaron2410
 # Integrante B: ______________________  Carne: __________  GitHub: ____________
 # Integrante C: ______________________  Carne: __________  GitHub: ____________
 #               (deje en blanco si el grupo es de dos personas)
@@ -121,7 +121,11 @@ data("ToothGrowth")
 # Asignele un titulo, una etiqueta de eje y un color de su eleccion.
 
 # >>> ESCRIBA SU CODIGO AQUI:
-
+barplot(airquality$Wind,
+        main = "Distribución de la Velocidad del Viento",
+        xlab = "Intervalos de Wind",
+        ylab = "Frecuencia",
+        col = "skyblue")
 
 
 # ------------------------------------------------------------------------------
