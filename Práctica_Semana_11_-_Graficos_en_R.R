@@ -305,7 +305,14 @@ ggplot(data = airquality, aes(x = Temp, y = Ozone)) +
 # COMENTE que aporta esta tercera variable a la lectura del grafico.
 
 # >>> ESCRIBA SU CODIGO AQUI:
-
+ggplot(data = airquality, aes(x = Temp, y = Ozone, color = factor(Month))) +
+  geom_point(shape = 19) +
+  labs(
+    title = "Relación entre Temperatura y Ozono",
+    x = "Temperatura (Temp)",
+    y = "Ozono (Ozone)",
+    color = "Mes"
+  )
 
 
 # Comentario 2.2: ______________________________________________________________
