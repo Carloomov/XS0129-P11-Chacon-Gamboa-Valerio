@@ -19,7 +19,7 @@
 # DATOS DEL GRUPO
 # ------------------------------------------------------------------------------
 # Integrante A: Aaron Chacon Gamboa  Carne: C4E125  GitHub: aaron2410
-# Integrante B: ______________________  Carne: __________  GitHub: ____________
+# Integrante B: Faustino Gamboa Araya  Carne: C4F274  GitHub: faustinogamboa40-cmyk
 # Integrante C: ______________________  Carne: __________  GitHub: ____________
 #               (deje en blanco si el grupo es de dos personas)
 #
@@ -137,7 +137,19 @@ barplot(airquality$Wind,
 
 # >>> ESCRIBA SU CODIGO AQUI:
 
+hist(airquality$Ozone, main = "Ozone",
+     breaks = 5,
+     xlab = "concentracion de ozono",
+     xlim = c(0, 180),
+     col = "yellow",
+     freq = TRUE)
 
+hist(airquality$Ozone, main = "Ozone",
+     breaks = 15,
+     xlab = "concentracion de ozono",
+     xlim = c(0, 180),
+     col = "yellow",
+     freq = TRUE)
 
 # Comentario 1.2: ______________________________________________________________
 
