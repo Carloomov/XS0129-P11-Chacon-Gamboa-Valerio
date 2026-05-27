@@ -150,8 +150,14 @@ hist(airquality$Ozone, main = "Ozone",
      col = "yellow",
      freq = TRUE)
 
-# Comentario 1.2: ______________________________________________________________
-
+Al usar breaks = 5, el histograma agrupa los datos en pocas clases,
+lo que permite ver una visión general de la distribución del ozono,
+pero se pierden detalles finos de la variación de los datos.
+Al aumentar a breaks = 15, el histograma tiene más clases,
+lo que permite observar con mayor detalle la forma de la distribución,
+posibles concentraciones, asimetrías o valores atípicos.
+Sin embargo, demasiadas clases pueden hacer el gráfico más ruidoso
+y dificultar la interpretación global.
 
 
 # ------------------------------------------------------------------------------
@@ -225,6 +231,36 @@ pie(slices, labels = lbls, col = rainbow(length(lbls)),
 #    versionar imagenes generadas automaticamente.
 
 # >>> ESCRIBA SU CODIGO AQUI:
+# a) Dos gráficos base lado a lado
+par(mfrow = c(1, 2))  # 1 fila, 2 columnas
+
+# Gráfico 1: Histograma
+hist(mtcars$mpg,
+     main = "Distribución de MPG",
+     xlab = "Millas por galón",
+     col  = "steelblue")
+
+# Gráfico 2: Dispersión
+plot(mtcars$wt, mtcars$mpg,
+     main = "Peso vs MPG",
+     xlab = "Peso (1000 lbs)",
+     ylab = "Millas por galón",
+     col  = "tomato", pch = 16)
+
+# Restablecer panel a 1 gráfico
+par(mfrow = c(1, 1))
+
+
+# b) Exportar uno de los gráficos a PNG
+png("grafico_dispersion.png", width = 800, height = 600)
+
+plot(mtcars$wt, mtcars$mpg,
+     main = "Peso vs MPG",
+     xlab = "Peso (1000 lbs)",
+     ylab = "Millas por galón",
+     col  = "tomato", pch = 16)
+
+dev.off()  # Cierra el dispositivo y guarda el archivo
 
 
 
