@@ -287,6 +287,13 @@ library(ggplot2)
 # ahora con ggplot2 y geom_point().
 
 # >>> ESCRIBA SU CODIGO AQUI:
+ggplot(data = airquality, aes(x = Temp, y = Ozone)) +
+  geom_point(color = "red", shape = 19) +     #geom_point() dibuja los puntos. el gráfico se construye sumando capas con +
+  labs(
+    title = "Relación entre Temperatura y Ozono",
+    x = "Temperatura (Temp)",
+    y = "Ozono (Ozone)"
+  )
 
 
 
