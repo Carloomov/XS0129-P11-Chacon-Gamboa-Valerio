@@ -317,7 +317,8 @@ ggplot(data = airquality, aes(x = Temp, y = Ozone, color = factor(Month))) +
 
 # Comentario 2.2: ______________________________________________________________
 
-
+#Ahora el grafico muestra en qué meses se concentran ciertos valores
+#si algunos meses presentan más contaminación, patrones estacionales no solamente temperatura vs ozono
 
 # ------------------------------------------------------------------------------
 # Ejercicio 2.3  GEOMETRIAS ADICIONALES Y FACETAS  (4 pts)  [Resp.: Integrante C]
@@ -368,7 +369,30 @@ ggplot(data = iris, aes(x = Species, y = Sepal.Length, fill = Species)) +
 
 # >>> ESCRIBA SU CODIGO AQUI:
 
-
+ggplot(data = iris, aes(x = Species, y = Sepal.Length, fill = Species)) +
+  
+  geom_bar(stat = "summary", fun = "mean", color = "black", width = 0.6) +
+  
+  
+  labs(
+    title = "Análisis del Tamaño del Sépalo en el Género Iris",
+    subtitle = "Comparación del promedio de la longitud del sépalo entre tres especies",
+    x = "Especie de Flor",
+    y = "Longitud Promedio del Sépalo (cm)",
+    caption = "Fuente: Dataset integrado 'iris' de R"
+  ) +
+  
+  scale_fill_manual(values = c("setosa" = "#7570b3", 
+                               "versicolor" = "#1b9e77", 
+                               "virginica" = "#d95f02")) +
+  theme_classic() +
+  
+  theme(
+    legend.position = "none",
+    plot.title = element_text(face = "bold", size = 14, hjust = 0.5),
+    plot.subtitle = element_text(face = "italic", size = 11, hjust = 0.5, color = "gray30"),
+    plot.caption = element_text(size = 9, face = "italic", color = "gray40")
+  )
 
 # ==============================================================================
 # PARTE 3 - GRAFICOS CON MAPAS  (15 puntos)
@@ -456,24 +480,47 @@ library(maps)
 #   ___________________________________________________________________________
 #
 # ------------------------------------------------------------------------------
-# 4.2  FICHA DE DOCUMENTACION  (6 pts)             [Responsable: Integrante B]
-# ------------------------------------------------------------------------------
-# Investiguen en la documentacion oficial (CRAN, viñetas, sitio del paquete) y
-# COMPLETEN la siguiente ficha como comentarios. Indiquen las fuentes.
+#4.2  FICHA DE DOCUMENTACION
 #
-#   a) Nombre del paquete y autor(es) principales:
-#      _________________________________________________________________________
-#   b) Para que tipo de visualizaciones se utiliza:
-#      _________________________________________________________________________
-#   c) Funcion(es) principal(es) del paquete y que hace cada una:
-#      _________________________________________________________________________
-#   d) Una ventaja y una limitacion frente al paquete base o ggplot2:
-#      Ventaja:    ______________________________________________________________
-#      Limitacion: ______________________________________________________________
-#   e) Fuentes consultadas (al menos dos, con su enlace):
-#      1) _______________________________________________________________________
-#      2) _______________________________________________________________________
+# a) Nombre del paquete y autor(es) principales:
+#    Paquete: treemap
+#    Autor principal: Martijn Tennekes
+#    Colaborador: Peter Ellis
 #
+# b) Para que tipo de visualizaciones se utiliza:
+#    Se utiliza para crear mapas de árbol (treemaps), una visualización
+#    jerárquica donde los datos se representan mediante rectángulos anidados.
+#    Permite mostrar proporciones, categorías y subcategorías de forma compacta.
+#
+# c) Funcion(es) principal(es) del paquete y que hace cada una:
+#    - treemap():
+#      Crea mapas de árbol jerárquicos a partir de datos numéricos y categóricos.
+#
+#    - itreemap():
+#      Proporciona una interfaz interactiva para construir treemaps.
+#
+#    - treecolors():
+#      Permite generar y experimentar con paletas de colores jerárquicas.
+#
+#    - treegraph():
+#      Genera gráficos de árbol relacionados con estructuras jerárquicas.
+#
+# d) Una ventaja y una limitacion frente al paquete base o ggplot2:
+#    Ventaja:
+#    Permite representar grandes cantidades de datos jerárquicos de manera
+#    compacta y visualmente clara, algo que no es tan directo en gráficos base
+#    o ggplot2.
+#
+#    Limitacion:
+#    Puede ser difícil comparar valores muy similares y las etiquetas pueden
+#    volverse poco legibles cuando existen muchos niveles o categorías.
+#
+# e) Fuentes consultadas (al menos dos, con su enlace):
+#    1) CRAN - treemap package:
+#       https://cran.r-project.org/package=treemap
+#
+#    2) Documentación oficial en RDocumentation:
+#       https://www.rdocumentation.org/packages/treemap
 # ------------------------------------------------------------------------------
 # 4.3  EJEMPLO APLICADO  (8 pts)                   [Responsable: TODO EL GRUPO]
 # ------------------------------------------------------------------------------
